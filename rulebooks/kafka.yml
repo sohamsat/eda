@@ -4,9 +4,9 @@
   ## Define our source for events
   sources:
     - ansible.eda.kafka:
-        host: broker
+        host: kafka.example.com
         port: 9092
-        topic: eda-topic
+        topic: demo
         group_id:
 
   ## Define the conditions we are looking for
