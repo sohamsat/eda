@@ -12,4 +12,4 @@
       condition: event.target_os == "linux"
       action:
         debug:
-          msg: “{{ event }}”
+          msg: "{{ ansible_eda.event }}"
