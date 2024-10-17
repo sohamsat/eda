@@ -1,0 +1,14 @@
+---
+- name: Hello Events
+  hosts: localhost
+  sources:
+    - ansible.eda.kafka:
+        host: kafka.example.com
+        port: 9092
+        topic: demo
+  rules:
+    - name: Say Hello
+      condition: event.target_os == "linux"
+      action:
+        debug:
+          msg: “{{ event }}”
