@@ -6,6 +6,7 @@
         host: kafka.example.com
         port: 9092
         topic: demo
+        group_id:
   rules:
     - name: Say Hello
       condition: event.target_os == "linux"
