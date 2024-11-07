@@ -1,0 +1,14 @@
+---
+- name: Automatic Remediation of a webserver
+  hosts: all
+  sources:
+    - name: listen for alerts
+      ansible.eda.alertmanager:
+        host: 10.74.195.81
+        port: 443
+  rules:
+    - name: restart web server
+      condition: event.alert.labels.job == "fastapi" and event.alert.status == "firing"
+      action:
+        run_playbook:
+          name: ansible.eda.start_app
