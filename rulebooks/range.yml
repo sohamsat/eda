@@ -1,0 +1,15 @@
+---
+- name: Using range
+  hosts: all
+  sources:
+    - ansible.eda.range:
+        limit: 30
+
+  ## Define the conditions we are looking for
+  rules:
+    - name: Print debug
+      condition: event.limit == 27
+      ## Define the action we should take should the condition be met
+      action:
+        debug:
+          msg: "I am learning to write a rulebook as a part of training"
