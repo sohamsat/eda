@@ -8,8 +8,8 @@
   ## Define the conditions we are looking for
   rules:
     - name: Print debug
-      condition: event.limit == 27
+      condition: true
       ## Define the action we should take should the condition be met
       action:
         debug:
-          msg: "I am learning to write a rulebook as a part of training"
+          msg: event
